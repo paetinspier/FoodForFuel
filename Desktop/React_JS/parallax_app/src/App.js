@@ -1,28 +1,15 @@
-import Container from "./components/Container";
-import Footer from "./components/Footer";
+import Home from "./components/Home";
 import About from "./components/About";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Route
-          path="/"
-          exact
-          render={(props) => (
-            <>
-              <Container user="Paetin" />
-              <Container user="Stella" />
-              <Container user="Rya" />
-              <Container user="Rebecca" />
-            </>
-          )}
-        />
-        <Route path="/about" component={About} />
-        <Footer />
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<Home/>}/>
+        <Route exact path='/about' element={<About/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
