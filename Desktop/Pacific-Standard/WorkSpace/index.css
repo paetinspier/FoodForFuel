@@ -1,0 +1,427 @@
+* {
+    font-family: 'Barlow', sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+}
+
+body {
+    font-size: 1.3125rem;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+    line-height: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+}
+
+
+/*-- paralax stuff --*/
+
+#galleryIMG {
+    position: relative;
+    opacity: 1;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vmin;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: slidebg 25s linear infinite 0s;
+    animation-timing-function: ease-in-out;
+}
+
+#pdivider1,
+#pdivider2,
+#pdivider3 {
+    position: relative;
+    opacity: 1;
+    background-position: center;
+    background-size: cover;
+    min-height: 50vmin;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: slidebg 25s linear infinite 0s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slidebg {
+    0% {
+        background-image: url('images/hand-crafted-bathroom-vanity.jpg');
+    }
+    25% {
+        background-image: url('images/Prairie-Style-Private-Gallery.jpg');
+    }
+    75% {
+        background-image: url('images/High-efficiency-custom-home.jpg');
+    }
+    100% {
+        background-image: url('images/kitchen-for-entertaining.jpg');
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------- */
+
+
+/* nav bar stuff*/
+
+.navBar {
+    position: absolute;
+    top: 100vh;
+    transform: translateY(-100%);
+    width: 100%;
+    background-color: #00000086;
+}
+
+.fixedNavBar {
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    background-color: #83838352;
+}
+
+.ptext {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.ptext img {
+    width: 250px;
+    height: 250px;
+}
+
+
+/*------------------------------------------------------------------------------------------- */
+
+
+/*-- menu buttons --*/
+
+.bn101 {
+    border-color: #00000098;
+    border-radius: 50px;
+    border-width: thin;
+    color: #ffffff;
+    background-color: #ffffff00;
+    padding: 7px 7px;
+}
+
+.bn101:hover {
+    border-color: #00000000;
+    background-color: #c7aa4b;
+    color: #ffffff;
+    padding: 7px 7px;
+}
+
+
+/*-- -------------------------------------------------------------------------------------- --*/
+
+
+/* this is the Get in touch with us section */
+
+.gitContainer {
+    background-color: #e7e2da;
+}
+
+
+/* this is the text above the git buttons */
+
+.ttleTxt {}
+
+.ttleTxt h3 {
+    text-align: center;
+}
+
+.ttleTxt p {
+    text-align: center;
+}
+
+.ttleTxt img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* this is the get in touch buttons*/
+
+.GetInTouch {
+    display: flex;
+    justify-content: space-around;
+}
+
+.GetInTouch button {
+    border-radius: 5rem;
+    height: 10.4rem;
+    width: 10.4rem;
+    border-color: #00000000;
+    background-color: #00000000;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/1line_logo.png');
+}
+
+.GetInTouch button:hover {
+    background-image: url('images/2lines_logo.png');
+    background-repeat: no-repeat;
+}
+
+
+/*-- -------------------------------------------------------------------------------------- --*/
+
+
+/* this deals with the text on the small parallax above the nav buttons*/
+
+
+/*-- -------------------------------------------------------------------------------------- --*/
+
+
+/* this is all the css that goes into the 12 navigation buttons*/
+
+.Nav_images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.Nav_images img {
+    width: 100%;
+    height: 350px;
+    transition: opacity .5s;
+}
+
+.navIMG1 {
+    position: relative;
+    width: 100%;
+    background-color: white;
+}
+
+.navIMG1:hover img {
+    opacity: .4;
+    background-color: white;
+}
+
+.imgMG {
+    display: block;
+}
+
+.text_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.text_overlay>* {
+    transform: translateY(250px);
+    transition: transform 0.5s;
+}
+
+.text_overlay:hover {
+    opacity: 1;
+}
+
+.text_overlay:hover>* {
+    transform: translateY(0);
+}
+
+.IMG1Tittle {
+    font-size: 2em;
+    font-weight: bold;
+    color: #45463d
+}
+
+.IMG1Tittle h2 {
+    text-align: center;
+}
+
+.IMG1Description {
+    font-size: 1.25em;
+    margin-top: 0.25em;
+}
+
+
+/*-- -------------------------------------------------------------------------------------- --*/
+
+
+/* INSTAGRAM PHOTO GALLERY*/
+
+.instaGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.instaGallery img {
+    width: 100%;
+    height: 300px;
+    transition: opacity .5s;
+}
+
+.instaTtle {
+    padding-left: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+/*-- -------------------------------------------------------------------------------------- --*/
+
+
+/*-- ---------------------------------  about us  ----------------------------------------- --*/
+
+.AUR1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-row-gap: 1rem;
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+}
+
+.AUR1 img {
+    width: 100%;
+    height: 600px;
+}
+
+.AUR1 h5 {
+    text-align: left;
+    font-weight: 300;
+}
+
+.caption h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 80px;
+}
+
+.caption h4 {
+    text-align: center;
+}
+
+.AUR1 p {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-weight: 100;
+}
+
+.AUR2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-row-gap: 1rem;
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+}
+
+.AUR2 img {
+    width: 100%;
+    height: 500px;
+}
+
+.AUR2 h4 {
+    text-align: center;
+    font-weight: 300;
+}
+
+.AUR2 p {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-weight: 100;
+}
+
+
+/*-- -------------------------------------------------------------------------------------- --*/
+
+.col {
+    text-align: center;
+}
+
+
+/* ------------------------------------- social media icons ----------------------------------- */
+
+
+/* Style all font awesome icons */
+
+.fa {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100%;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+/* Set a specific color for each brand */
+
+
+/* instagram */
+
+.fa-instagram {
+    background: #e95950;
+    color: white;
+}
+
+
+/* linkedin #0072b1 */
+
+.fa-linkedin {
+    background: #0072b1;
+    color: white;
+}
+
+
+/*---------------------- copyright tag --------------------------*/
+
+.copyright {
+    font-size: x-small;
+    text-align: center;
+}
+
+
+/*--------- stops links from turning blue and gross ------------- Probably don't want to touch this*/
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
