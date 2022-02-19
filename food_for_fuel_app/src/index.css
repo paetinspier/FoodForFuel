@@ -1,9 +1,40 @@
 .contain {
-    min-width: fit-content;
+    min-width: 500px;
     margin: auto;
     overflow: auto;
     min-height: fit-content;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: rgba(2, 2, 2, 0.171);
+    padding: 2px;
+    background-image: linear-gradient(43deg, #d04141 0%, #c88050 46%, #FFCC70 100%);
+    border-radius: 40px;
+    background-color: #4158D0;
+}
+
+.contain-rad {
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    color: rgb(0, 0, 0);
+    border-radius: 38px;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+}
+
+.circle-btn {
+    border-radius: 100%;
+    height: 45px;
+    width: 45px;
+    background-image: url('/src/components/images/plus-circle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-color: rgba(32, 222, 255, 0.678);
+}
+
+.circle-btn:hover {
+    transition-duration: .5s;
+    box-shadow: inset 0 0 0 1px;
+    background-color: rgba(32, 222, 255, 0.678);
+    color: rgba(255, 255, 255, 0);
 }

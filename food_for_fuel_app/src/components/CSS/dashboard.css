@@ -1,0 +1,48 @@
+.backSplash {
+    background-color: #cccccc60;
+    width: 100vw;
+    height: 100vh;
+}
+
+h3 {
+    font-weight: 200;
+    color: black;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.foodBtn {
+    color: red;
+    background: linear-gradient(190deg, #ff0000, #ff000049);
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: rgba(136, 136, 136, 0.25) 0px 14px 28px, rgba(165, 165, 165, 0.22) 0px 10px 10px;
+}
+
+.exBtn {
+    color: red;
+    background: linear-gradient(190deg, #008cff, #008cff49);
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: rgba(136, 136, 136, 0.25) 0px 14px 28px, rgba(165, 165, 165, 0.22) 0px 10px 10px;
+}
+
+.bioBtn {
+    color: red;
+    background: linear-gradient(190deg, #6200ff, #6200ff49);
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: rgba(136, 136, 136, 0.25) 0px 14px 28px, rgba(165, 165, 165, 0.22) 0px 10px 10px;
+}
