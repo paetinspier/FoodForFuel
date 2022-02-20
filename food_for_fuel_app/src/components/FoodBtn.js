@@ -6,7 +6,7 @@ function FoodBtn(){
         <div>
             <Link to=''>
                 <div className='foodBtn'>
-                    <h3>Add Food</h3>
+                    <h3 style={{fontSize: '1.5rem'}}>Add Food</h3>
                 </div>
             </Link>
             <Outlet/>

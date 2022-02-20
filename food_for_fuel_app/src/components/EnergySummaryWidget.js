@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css';
 function EnergySummaryWidget(){
     return(
         <div className='contain'>
-            <div className='contain-rad'>
+            <div className='contain-rad' style={{color: 'white', backgroundColor: 'black'}}>
                 <Container>
                     <Row style={{paddingBottom: '25px'}}>
                         <Col sm={12}>
@@ -16,23 +16,25 @@ function EnergySummaryWidget(){
                     </Row>
                     <Row>
                         <Col sm={12}>
-                            <div style={{height: '100%', width: '150px', marginLeft: '30%'}}>
-                                <CircularProgressbar value={30} text={'30'+ ' KCAL'}  styles={buildStyles({textColor: "grey", pathColor: "green"})}/>
-                                <h4 style={{textAlign: 'center'}}>Budget</h4>
+                            <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
+                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "grey", pathColor: "green", trailColor: 'grey'})}/>
+                                <h4 style={{textAlign: 'center', fontWeight:'150'}}>Budget</h4>
                             </div>
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={6}>
-                            <div style={{height: '100%', width: '150px', marginLeft: '5%'}}>
-                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "Grey", pathColor: "red"})}/>
-                                <h4 style={{textAlign: 'center'}}>Consumed</h4>
+                        <Col sm={12}>
+                            <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
+                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "Grey", pathColor: "red", trailColor: 'grey'})}/>
+                                <h4 style={{textAlign: 'center', fontWeight: '150'}}>Consumed</h4>
                             </div>
                         </Col>
-                        <Col sm={6}>
-                            <div style={{height: '100%', width: '150px', marginLeft: '15%'}}>
-                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "grey"})}/>
-                                <h4 style={{textAlign: 'center'}}>Burned</h4>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                            <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
+                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "grey", trailColor: 'grey'})}/>
+                                <h4 style={{textAlign: 'center', fontWeight: '150'}}>Burned</h4>
                             </div>
                         </Col>
                     </Row>

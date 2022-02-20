@@ -6,7 +6,7 @@ function ExerciseBtn(){
         <div>
             <Link to=''>
                 <div className='exBtn'>
-                    <h3>Add Exercise</h3>
+                    <h3 style={{fontSize: '1.5rem'}}>Add Exercise</h3>
                 </div>
             </Link>
             <Outlet/>

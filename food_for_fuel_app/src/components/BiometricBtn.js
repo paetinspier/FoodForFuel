@@ -6,7 +6,7 @@ function BiometricBtn(){
         <div>
             <Link to=''>
                 <div className='bioBtn'>
-                    <h3>Add Biometric</h3>
+                    <h3 style={{fontSize: '1.5rem'}}>Add Biometric</h3>
                 </div>
             </Link>
             <Outlet/>

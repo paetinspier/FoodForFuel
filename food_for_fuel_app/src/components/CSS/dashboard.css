@@ -17,32 +17,35 @@ a {
 .foodBtn {
     color: red;
     background: linear-gradient(190deg, #ff0000, #ff000049);
-    height: 100%;
-    width: 100%;
+    height: 10vh;
+    width: 17vw;
     border-radius: 25px;
     padding: 25px;
     text-align: center;
     box-shadow: rgba(136, 136, 136, 0.25) 0px 14px 28px, rgba(165, 165, 165, 0.22) 0px 10px 10px;
+    font-size: .1rem;
 }
 
 .exBtn {
     color: red;
     background: linear-gradient(190deg, #008cff, #008cff49);
-    height: 100%;
-    width: 100%;
+    height: 10vh;
+    width: 17vw;
     border-radius: 25px;
     padding: 25px;
     text-align: center;
     box-shadow: rgba(136, 136, 136, 0.25) 0px 14px 28px, rgba(165, 165, 165, 0.22) 0px 10px 10px;
+    font-size: .1rem;
 }
 
 .bioBtn {
     color: red;
     background: linear-gradient(190deg, #6200ff, #6200ff49);
-    height: 100%;
-    width: 100%;
+    height: 10vh;
+    width: 17vw;
     border-radius: 25px;
     padding: 25px;
     text-align: center;
     box-shadow: rgba(136, 136, 136, 0.25) 0px 14px 28px, rgba(165, 165, 165, 0.22) 0px 10px 10px;
+    font-size: .1rem;
 }

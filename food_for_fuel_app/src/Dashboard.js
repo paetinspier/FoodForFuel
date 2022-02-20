@@ -31,7 +31,7 @@ function Dashboard(){
             backgroundColor: 'white'
         },
         position: 'fixed',
-        height: '45vh',
+        height: '100vh',
         borderRight: '1px solid #b8b8b849',
         backgroundColor: 'white'
     };
@@ -39,7 +39,7 @@ function Dashboard(){
 
     return(
         <div >
-            <Container fluid>
+            <Container fluid style={{backgroundColor: '#f0f0f0'}}>
                 {/* this Row represents the entire viewport */}
                 <Row>
                     {/* this Column is the left panel */}
@@ -80,7 +80,7 @@ function Dashboard(){
                     <Col sm={10} style={{height: '100%'}}>
                         {/* this Row is the header row at the top */}
                         <Row style={{height: '20%'}}>
-                            <h1 style={{fontWeight: '300', paddingTop: '1%'}}>Welcome, User Name</h1>
+                            <h1 style={{fontWeight: '300', paddingTop: '2%', paddingBottom: '5%'}}>Welcome, User Name</h1>
                         </Row>
                         {/* this Row is the main dashboard part */}
                         <Row style={{ height: '80%'}}>
@@ -90,7 +90,7 @@ function Dashboard(){
                                         <AddComponent/>
                                     </div>
                                     <div style={{alignContent: 'center'}}>
-                                        <Stack gap={5} direction='horizontal'>
+                                        <Stack gap={4} direction='horizontal'>
                                             <div>
                                                 <FoodBtn/>
                                             </div>
