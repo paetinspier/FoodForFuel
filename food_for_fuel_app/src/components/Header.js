@@ -25,7 +25,7 @@ function Header () {
             <Row>
                 <Stack direction="horizontal" gap={1}>
                     <div>
-                        <Link to='/Dashboard'><Image className="rounded-pill" src={ Logo } style={{width: '20%'}}></Image></Link>
+                        <Link to='/'><Image className="rounded-pill" src={ Logo } style={{width: '20%'}}></Image></Link>
                         <Outlet/>
                     </div>
                     <div className="ms-auto">

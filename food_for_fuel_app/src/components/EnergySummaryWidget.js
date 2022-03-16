@@ -1,4 +1,4 @@
-import {Container, Row, Stack, Col} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import '../index.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -17,7 +17,7 @@ function EnergySummaryWidget(){
                     <Row>
                         <Col sm={12}>
                             <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
-                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "grey", pathColor: "green", trailColor: 'grey'})}/>
+                                <CircularProgressbar value={30} text={'30 KCAL'} styles={buildStyles({textColor: "grey", pathColor: "green", trailColor: 'grey'})}/>
                                 <h4 style={{textAlign: 'center', fontWeight:'150'}}>Budget</h4>
                             </div>
                         </Col>
@@ -25,7 +25,7 @@ function EnergySummaryWidget(){
                     <Row>
                         <Col sm={12}>
                             <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
-                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "Grey", pathColor: "red", trailColor: 'grey'})}/>
+                                <CircularProgressbar value={30} text={'30 KCAL'} styles={buildStyles({textColor: "Grey", pathColor: "red", trailColor: 'grey'})}/>
                                 <h4 style={{textAlign: 'center', fontWeight: '150'}}>Consumed</h4>
                             </div>
                         </Col>
@@ -33,7 +33,7 @@ function EnergySummaryWidget(){
                     <Row>
                         <Col sm={12}>
                             <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
-                                <CircularProgressbar value={30} text={'30'+ ' KCAL'} styles={buildStyles({textColor: "grey", trailColor: 'grey'})}/>
+                                <CircularProgressbar value={30} text={'30 KCAL'} styles={buildStyles({textColor: "grey", trailColor: 'grey'})}/>
                                 <h4 style={{textAlign: 'center', fontWeight: '150'}}>Burned</h4>
                             </div>
                         </Col>

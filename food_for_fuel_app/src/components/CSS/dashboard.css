@@ -17,8 +17,8 @@ a {
 .foodBtn {
     color: red;
     background: linear-gradient(190deg, #ff0000, #ff000049);
-    height: 10vh;
-    width: 17vw;
+    height: 100%;
+    width: 100%;
     border-radius: 25px;
     padding: 25px;
     text-align: center;
@@ -29,8 +29,8 @@ a {
 .exBtn {
     color: red;
     background: linear-gradient(190deg, #008cff, #008cff49);
-    height: 10vh;
-    width: 17vw;
+    height: 100%;
+    width: 100%;
     border-radius: 25px;
     padding: 25px;
     text-align: center;
@@ -41,8 +41,8 @@ a {
 .bioBtn {
     color: red;
     background: linear-gradient(190deg, #6200ff, #6200ff49);
-    height: 10vh;
-    width: 17vw;
+    height: 100%;
+    width: 100%;
     border-radius: 25px;
     padding: 25px;
     text-align: center;

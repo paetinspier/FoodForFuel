@@ -1,7 +1,4 @@
 import DynamicTable from './DynamicTable'
-import Stack from 'react-bootstrap/Stack';
-import { useState } from 'react'
-
 
 
 function AddComponent(){
@@ -10,7 +7,7 @@ function AddComponent(){
         <div className='contain'>
             <div className='contain-rad'>
                 <h2 style={{fontWeight: '150'}}>DAILY LOG</h2>
-                <DynamicTable data={dataTable}/>
+                <DynamicTable />
             </div>
         </div>
     );
