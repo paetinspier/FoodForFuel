@@ -4,7 +4,7 @@ import App from './App';
 import Dashboard from './Dashboard';
 import { render } from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import Login from './components/Login';
 
 
 
@@ -14,6 +14,7 @@ render(
     <Routes>
       <Route exact path='/' element={<App/>}/>
       <Route exact path='/Dashboard' element={<Dashboard/>}/>
+      <Route exact path='/login' element={<Login/>}/>
     </Routes>
   </BrowserRouter>,
   rootElement

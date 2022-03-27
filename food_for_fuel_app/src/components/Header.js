@@ -6,18 +6,16 @@ import Stack from 'react-bootstrap/Stack';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'react-bootstrap/Image';
 import Logo from './images/logo.png';
-import Modal from 'react-bootstrap/Modal';
-import { useState } from 'react';
-import {FormControl} from 'react-bootstrap';
-import InputGroup from 'react-bootstrap/InputGroup'
+import { useNavigate } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 
 function Header () {
 
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `login`; 
+      navigate(path);
+    }
 
     return(
     <div className="Header">
@@ -29,30 +27,11 @@ function Header () {
                         <Outlet/>
                     </div>
                     <div className="ms-auto">
-                        <Button variant="outline-secondary" onClick={handleShow}>LOGIN</Button>
+                        <Button variant="outline-secondary" onClick={routeChange}>LOGIN</Button>
                     </div>
                 </Stack>
             </Row>
         </Container>
-
-        <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
-      centered>
-            <Modal.Header closeButton >
-                <Modal.Title>MEMBER LOGIN</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                    <FormControl placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
-                </InputGroup>
-                <InputGroup className='mb-3'>
-                    <FormControl placeholder='Password'/>
-                </InputGroup>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button variant="primary" size='lg'>LOG IN</Button>
-            </Modal.Footer>
-        </Modal>
         
     </div>
     );
