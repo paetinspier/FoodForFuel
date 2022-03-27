@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import SubmitButton from "../components/SubmitButton";
 import "./CSS/SignUp.css";
 
@@ -9,9 +9,9 @@ export default function Signup() {
   const  password = "";
   const  confirmPassword = "";
   const  confirmationCode = "";
-  const history = useHistory();
+  //const history = useHistory();
   const [newUser, setNewUser] = useState(null);
-  const { userHasAuthenticated } = useAppContext();
+  //const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
   function validateForm() {
@@ -46,8 +46,8 @@ function renderConfirmationForm() {
         <Form.Control
           autoFocus
           type="tel"
-          onChange={handleFieldChange}
-          value={fields.confirmationCode}
+          //onChange={handleFieldChange}
+          value={confirmationCode}
         />
         <Form.Text muted>Please check your email for the code.</Form.Text>
       </Form.Group>
@@ -73,24 +73,24 @@ function renderForm() {
         <Form.Control
           autoFocus
           type="email"
-          value={fields.email}
-          onChange={handleFieldChange}
+          value={email}
+          //onChange={handleFieldChange}
         />
       </Form.Group>
       <Form.Group controlId="password" size="lg">
         <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
-          value={fields.password}
-          onChange={handleFieldChange}
+          value={password}
+          //onChange={handleFieldChange}
         />
       </Form.Group>
       <Form.Group controlId="confirmPassword" size="lg">
         <Form.Label>Confirm Password</Form.Label>
         <Form.Control
           type="password"
-          onChange={handleFieldChange}
-          value={fields.confirmPassword}
+          //onChange={handleFieldChange}
+          value={confirmPassword}
         />
       </Form.Group>
       <SubmitButton
