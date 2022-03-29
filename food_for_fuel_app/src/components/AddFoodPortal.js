@@ -63,7 +63,7 @@ function AddFoodPortal(){
                     <div>
                         {foodList.map((food, index)=>
                         (
-                        <button style={{width:'100%'}} key={index} value={index} onClick={storeFood}>{food.description} serving size: {food.servingSize}{food.servingSizeUnit}</button>
+                        <button style={{width:'100%'}} key={index} value={index} onClick={storeFood}>{food.lowercaseDescription} {food.brandName} serving size: {food.servingSize}{food.servingSizeUnit}</button>
                         )
                         )}
                     </div>

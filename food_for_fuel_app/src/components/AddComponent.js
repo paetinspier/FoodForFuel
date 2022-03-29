@@ -5,9 +5,14 @@ import {FoodContext} from '../FoodContext';
 function AddComponent(){
     const [myFood, setMyFood] = useContext(FoodContext);
 
-    function removeItem(index){
-        console.log(myFood);
-    }
+    const removeItem = index => {
+        // create temp array
+        const temp = [...myFood];
+        // splice temp array... at index of index and we want to remove one item  
+        temp.splice(index, 1);
+        // update real list with the temp list using setMyFood
+        setMyFood(temp);
+    };
 
     return(
         <div className='contain'>
@@ -30,7 +35,7 @@ function AddComponent(){
                                             {food.servingSize}{food.servingSizeUnit}
                                         </Col>
                                         <Col>
-                                        <button value={index} onClick={removeItem}>X</button>
+                                        <button name={index} onClick={() => removeItem(index)}>X</button>
                                         </Col>
                                     </Row>
                                 </Container>

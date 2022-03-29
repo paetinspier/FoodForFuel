@@ -1,10 +1,37 @@
+import React, {useContext} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import '../index.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
+import {FoodContext} from '../FoodContext';
 
 function EnergySummaryWidget(){
+
+    const [myFood, setMyFood] = useContext(FoodContext);
+
+    var budget = 2500;
+    var consumed = 0;
+    var burned = 0;
+
+    var calorieTargetValue = 2500;
+    var proteinTargetValue = 200;
+    var carbTargetValue = 300;
+    var fatTargetValue = 75;
+
+    for(var i = 0; i < myFood.length; i++){
+        console.log(myFood[i].foodNutrients.length);
+        for(var j = 0; j < myFood[i].foodNutrients.length; j++){
+            if(myFood[i].foodNutrients[j].nutrientId === 1008){
+                //console.log('we have found the energy: ' + myFood[i].foodNutrients[j].value);
+                consumed += myFood[i].foodNutrients[j].value;
+                budget -= myFood[i].foodNutrients[j].value;
+            }
+        }
+    }
+
+
+
+
     return(
         <div className='contain'>
             <div className='contain-rad' style={{color: 'white', backgroundColor: 'black'}}>
@@ -17,7 +44,7 @@ function EnergySummaryWidget(){
                     <Row>
                         <Col sm={12}>
                             <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
-                                <CircularProgressbar value={30} text={'30 KCAL'} styles={buildStyles({textColor: "grey", pathColor: "green", trailColor: 'grey'})}/>
+                                <CircularProgressbar value={(budget/calorieTargetValue)*100} text={`${budget} KCAL`} styles={buildStyles({textColor: "grey", pathColor: "green", trailColor: 'grey'})}/>
                                 <h4 style={{textAlign: 'center', fontWeight:'150'}}>Budget</h4>
                             </div>
                         </Col>
@@ -25,7 +52,7 @@ function EnergySummaryWidget(){
                     <Row>
                         <Col sm={12}>
                             <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
-                                <CircularProgressbar value={30} text={'30 KCAL'} styles={buildStyles({textColor: "Grey", pathColor: "red", trailColor: 'grey'})}/>
+                                <CircularProgressbar value={(consumed/calorieTargetValue)*100} text={`${consumed} KCAL`} styles={buildStyles({textColor: "Grey", pathColor: "red", trailColor: 'grey'})}/>
                                 <h4 style={{textAlign: 'center', fontWeight: '150'}}>Consumed</h4>
                             </div>
                         </Col>
@@ -33,7 +60,7 @@ function EnergySummaryWidget(){
                     <Row>
                         <Col sm={12}>
                             <div style={{height: '100%', width: '7vw', marginLeft: '35%'}}>
-                                <CircularProgressbar value={30} text={'30 KCAL'} styles={buildStyles({textColor: "grey", trailColor: 'grey'})}/>
+                                <CircularProgressbar value={burned} text={`${burned} KCAL`} styles={buildStyles({textColor: "grey", trailColor: 'grey'})}/>
                                 <h4 style={{textAlign: 'center', fontWeight: '150'}}>Burned</h4>
                             </div>
                         </Col>
