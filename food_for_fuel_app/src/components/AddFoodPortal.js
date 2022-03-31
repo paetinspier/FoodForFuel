@@ -1,3 +1,4 @@
+import React from 'react';
 import { VscGraphLine } from 'react-icons/vsc';
 import { useState, useContext } from 'react';
 import { IconContext } from "react-icons";
