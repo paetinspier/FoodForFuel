@@ -14,9 +14,9 @@ function EnergySummaryWidget(){
     var burned = 0;
 
     var calorieTargetValue = 2500;
-    var proteinTargetValue = 200;
-    var carbTargetValue = 300;
-    var fatTargetValue = 75;
+    //var proteinTargetValue = 200;
+    //var carbTargetValue = 300;
+    //var fatTargetValue = 75;
 
     for(var i = 0; i < myFood.length; i++){
         console.log(myFood[i].foodNutrients.length);
