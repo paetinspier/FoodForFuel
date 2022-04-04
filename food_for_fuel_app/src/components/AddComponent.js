@@ -1,26 +1,17 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {Card, Container, Row, Col} from 'react-bootstrap';
 import {FoodContext} from '../FoodContext';
 
 function AddComponent(){
     const [myFood, setMyFood] = useContext(FoodContext);
 
+
     const removeItem = index => {
-        // create temp array
-        const temp = [...myFood];
-        // splice temp array... at index of index and we want to remove one item  
-        temp.splice(index, 1);
-        // update real list with the temp list using setMyFood
-        setMyFood(temp);
+        setMyFood([...myFood.slice(0, index), ...myFood.slice(index+1, myFood.length)]);
 
-        console.log(JSON.parse(localStorage.getItem('userData')));
-        // remove items from local storage
-        //localStorage.removeItem('userData');
-        //localStorage.setItem('userData', JSON.stringify(myFood));
-        //console.log(JSON.parse(localStorage.getItem('userData')));
-        //console.log(myFood.length);
-    };
+    }
 
+    
 
 
     return(

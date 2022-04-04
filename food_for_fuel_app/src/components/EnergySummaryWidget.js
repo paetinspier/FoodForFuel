@@ -9,8 +9,8 @@ function EnergySummaryWidget(){
 
     const [myFood, setMyFood] = useContext(FoodContext);
 
-    let data = JSON.parse(localStorage.getItem('userData'));
-
+    //let data = JSON.parse(localStorage.getItem('userData'));
+    let data = myFood;
 
     var budget = 2500;
     var consumed = 0;

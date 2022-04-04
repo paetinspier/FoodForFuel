@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { VscGraphLine } from 'react-icons/vsc';
 import { useState, useContext } from 'react';
 import { IconContext } from "react-icons";
@@ -27,6 +27,17 @@ function AddFoodPortal(){
     // this is to store the data that the user selects from the api search
     const [myFood, setMyFood] = useContext(FoodContext); // how to make this list of data global
     
+    useEffect(() => {
+        const userData = window.localStorage.getItem('userData');
+
+        setMyFood(JSON.parse(userData));
+    }, []);
+
+    useEffect(() => {
+        window.localStorage.setItem('userData', JSON.stringify(myFood));
+    });
+
+
 
     function storeFood(index){
         // index of food user selected
@@ -35,9 +46,6 @@ function AddFoodPortal(){
         const curr = foodList[i];
         // add selected food data to myFood array
         setMyFood([...myFood, curr]);
-
-        //localStorage.removeItem('userData');
-        console.log(JSON.parse(localStorage.getItem('userData')));
     }
 
 

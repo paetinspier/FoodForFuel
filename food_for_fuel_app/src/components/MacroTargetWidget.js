@@ -7,7 +7,8 @@ function MacroTargetWidget(){
 
     const [myFood, setMyFood] = useContext(FoodContext);
 
-    let data = JSON.parse(localStorage.getItem('userData'));
+
+    let data = myFood;
 
     var energyNow = 0;
     var proteinNow = 0;
