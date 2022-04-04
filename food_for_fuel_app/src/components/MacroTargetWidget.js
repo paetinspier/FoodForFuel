@@ -7,6 +7,8 @@ function MacroTargetWidget(){
 
     const [myFood, setMyFood] = useContext(FoodContext);
 
+    let data = JSON.parse(localStorage.getItem('userData'));
+
     var energyNow = 0;
     var proteinNow = 0;
     var fatNow = 0;
@@ -16,25 +18,25 @@ function MacroTargetWidget(){
     var carbTargetValue = 300;
     var fatTargetValue = 200;
 
-    for(var i = 0; i < myFood.length; i++){
-        console.log(myFood[i].foodNutrients.length);
-        for(var j = 0; j < myFood[i].foodNutrients.length; j++){
-            if(myFood[i].foodNutrients[j].nutrientId === 1008){
+    for(var i = 0; i < data.length; i++){
+        //console.log(myFood[i].foodNutrients.length);
+        for(var j = 0; j < data[i].foodNutrients.length; j++){
+            if(data[i].foodNutrients[j].nutrientId === 1008){
                 //console.log('we have found the energy: ' + myFood[i].foodNutrients[j].value);
-                energyNow += myFood[i].foodNutrients[j].value;
+                energyNow += data[i].foodNutrients[j].value;
             }
-            if(myFood[i].foodNutrients[j].nutrientId === 1003){
+            if(data[i].foodNutrients[j].nutrientId === 1003){
                 //console.log('we have found the protein: ' + myFood[i].foodNutrients[j].value);
-                proteinNow += myFood[i].foodNutrients[j].value;
+                proteinNow += data[i].foodNutrients[j].value;
             }
-            if(myFood[i].foodNutrients[j].nutrientId === 1004){
+            if(data[i].foodNutrients[j].nutrientId === 1004){
                 //console.log('we have found the carbs: ' + myFood[i].foodNutrients[j].value);
-                fatNow += myFood[i].foodNutrients[j].value;
-                console.log("total fat is now this much"+fatNow);
+                fatNow += data[i].foodNutrients[j].value;
+                //console.log("total fat is now this much"+fatNow);
             }
-            if(myFood[i].foodNutrients[j].nutrientId === 1005){
+            if(data[i].foodNutrients[j].nutrientId === 1005){
                 //console.log('we have found the fats: ' + myFood[i].foodNutrients[j].value);
-                carbNow += myFood[i].foodNutrients[j].value;
+                carbNow += data[i].foodNutrients[j].value;
             }
         }
     }

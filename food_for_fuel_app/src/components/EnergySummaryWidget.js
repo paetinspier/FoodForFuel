@@ -9,6 +9,9 @@ function EnergySummaryWidget(){
 
     const [myFood, setMyFood] = useContext(FoodContext);
 
+    let data = JSON.parse(localStorage.getItem('userData'));
+
+
     var budget = 2500;
     var consumed = 0;
     var burned = 0;
@@ -18,13 +21,13 @@ function EnergySummaryWidget(){
     //var carbTargetValue = 300;
     //var fatTargetValue = 75;
 
-    for(var i = 0; i < myFood.length; i++){
-        console.log(myFood[i].foodNutrients.length);
-        for(var j = 0; j < myFood[i].foodNutrients.length; j++){
-            if(myFood[i].foodNutrients[j].nutrientId === 1008){
+    for(var i = 0; i < data.length; i++){
+        //console.log(myFood[i].foodNutrients.length);
+        for(var j = 0; j < data[i].foodNutrients.length; j++){
+            if(data[i].foodNutrients[j].nutrientId === 1008){
                 //console.log('we have found the energy: ' + myFood[i].foodNutrients[j].value);
-                consumed += myFood[i].foodNutrients[j].value;
-                budget -= myFood[i].foodNutrients[j].value;
+                consumed += data[i].foodNutrients[j].value;
+                budget -= data[i].foodNutrients[j].value;
             }
         }
     }

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {Card, Container, Row, Col} from 'react-bootstrap';
 import {FoodContext} from '../FoodContext';
 
@@ -12,7 +12,16 @@ function AddComponent(){
         temp.splice(index, 1);
         // update real list with the temp list using setMyFood
         setMyFood(temp);
+
+        console.log(JSON.parse(localStorage.getItem('userData')));
+        // remove items from local storage
+        //localStorage.removeItem('userData');
+        //localStorage.setItem('userData', JSON.stringify(myFood));
+        //console.log(JSON.parse(localStorage.getItem('userData')));
+        //console.log(myFood.length);
     };
+
+
 
     return(
         <div className='contain'>

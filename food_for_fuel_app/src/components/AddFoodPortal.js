@@ -35,8 +35,9 @@ function AddFoodPortal(){
         const curr = foodList[i];
         // add selected food data to myFood array
         setMyFood([...myFood, curr]);
-        
-        console.log(myFood);
+
+        //localStorage.removeItem('userData');
+        console.log(JSON.parse(localStorage.getItem('userData')));
     }
 
 
