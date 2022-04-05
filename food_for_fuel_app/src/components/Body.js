@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function Body () {
+    
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
       let path = `signup`; 

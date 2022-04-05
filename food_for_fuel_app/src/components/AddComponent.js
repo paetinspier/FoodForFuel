@@ -11,9 +11,6 @@ function AddComponent(){
 
     }
 
-    
-
-
     return(
         <div className='contain'>
             <div className='contain-rad'>

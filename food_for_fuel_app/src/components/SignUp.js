@@ -6,27 +6,47 @@ import { useFormFields } from "../lib/hooksLib"
 import { Auth } from "aws-amplify";
 import "./CSS/SignUp.css";
 
-export default function Signup() {
-  const [newUser, setNewUser] = useState(null);
-  const [fields, handleFieldChange] = useFormFields({ email: "", password: ""});
+function Signup() {
+  const [setNewUser] = useState(null);
+  const [fields] = useFormFields({ email: "", password: ""});
 
   function validateForm() {
-    return (fields.email.length > 0 && fields.password.length > 0 && fields.password === fields.confirmPassword);
+    return (fields.email.length > 0 && 
+            fields.password.length > 0 && 
+            fields.password === fields.confirmPassword
+    );
   }
 
 function validateConfirmationForm() {
   return fields.confirmationCode.length > 0;
 }
 
+function handleSubmitEmail(userName){
+  fields.email = userName.target.value;
+  console.log(fields.email);
+}
+
+function handleSubmitPWord(pWord){
+  fields.password = pWord.target.value;
+  console.log(fields.password);
+}
+
+function handleSubmitConfirmPWord(pWord){
+  fields.confirmPassword = pWord.target.value;
+  console.log(fields.confirmPassword);
+}
+
 async function handleSubmit(event) {
   event.preventDefault();
-
+  console.log("submit");
+  
   try{
     const newUser = await Auth.signup({
       username: fields.email,
       password: fields.password,
     });
     setNewUser(newUser);
+
   } catch (e){
     alert("Something is missing. Please try again.");
   }
@@ -70,7 +90,6 @@ function renderConfirmationForm() {
   );
 }
 
-function renderForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="email" size="lg">
@@ -78,24 +97,24 @@ function renderForm() {
         <Form.Control
           autoFocus
           type="email"
-          value={fields.email}
-          //onChange={handleFieldChange}
+          onChange={handleSubmitEmail}
+          //value={fields.email}
         />
       </Form.Group>
       <Form.Group controlId="password" size="lg">
         <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
-          value={fields.password}
-          //onChange={handleFieldChange}
+          onChange={handleSubmitPWord}
+          //value={fields.password}
         />
       </Form.Group>
       <Form.Group controlId="confirmPassword" size="lg">
         <Form.Label>Confirm Password</Form.Label>
         <Form.Control
           type="password"
-          //onChange={handleFieldChange}
-          value={fields.confirmPassword}
+          onChange={handleSubmitConfirmPWord}
+          //value={fields.confirmPassword}
         />
       </Form.Group>
       <SubmitButton
@@ -103,7 +122,7 @@ function renderForm() {
         size="lg"
         type="submit"
         variant="success"
-        disabled={!validateForm()}
+        disabled={validateForm()}
       >
         Signup
       </SubmitButton>
@@ -111,9 +130,4 @@ function renderForm() {
   );
 }
 
-return (
-  <div className="Signup">
-    {fields.newUser === null ? renderForm() : renderConfirmationForm()}
-  </div>
-);
-}
+export default Signup;

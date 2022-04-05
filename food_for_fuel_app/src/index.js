@@ -7,16 +7,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 
-
-
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
       <Route exact path='/' element={<App/>}/>
       <Route exact path='/Dashboard' element={<Dashboard/>}/>
-      <Route exact path='/login' element={<Login/>}/>
-      <Route exact path='/signup' element={<SignUp/>}/>
+      <Route exact path='/Login' element={<Login/>}/>
+      <Route exact path='/SignUp' element={<SignUp/>}/>
     </Routes>
   </BrowserRouter>,
   rootElement
