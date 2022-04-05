@@ -27,12 +27,13 @@ function Login() {
   }
 
   const navigate = useNavigate();
-  const handleValidUser = () => {
-    navigate('/dashboard');
-  }
-  const handleInvalidUser = () => {
-    alert('invalid credentials');
-  }
+  // const handleValidUser = () => {
+  //   console.log('good login');
+  //   navigate('/dashboard');
+  // }
+  // const handleInvalidUser = () => {
+  //   alert('invalid credentials');
+  // }
 
 
   return (
@@ -55,7 +56,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={isAuthenticated ? handleValidUser : handleInvalidUser}>
+        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={isAuthenticated ? () => navigate("/Dashboard") : alert('invalid credentials')}>
           Login
         </Button>
       </Form>
