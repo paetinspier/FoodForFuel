@@ -1,18 +1,37 @@
 import React, { useState } from "react";
+import { Auth } from "aws-amplify";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./CSS/Login.css";
+import {useNavigate} from "react-router-dom";
 
-export default function Login() {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isAuthenticated, setAuthentication] = useState(false);
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event){
-    
+
+  async function handleSubmit(event){
+    event.preventDefault();
+
+    try{
+      await Auth.signIn(email,password);
+      setAuthentication(true);
+    } catch (e){
+      alert(e.message);
+    }
+  }
+
+  const navigate = useNavigate();
+  const handleValidUser = () => {
+    navigate('/dashboard');
+  }
+  const handleInvalidUser = () => {
+    alert('invalid credentials');
   }
 
 
@@ -36,10 +55,12 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={isAuthenticated ? handleValidUser : handleInvalidUser}>
           Login
         </Button>
       </Form>
     </div>
   );
 }
+
+export default Login;
