@@ -16,6 +16,7 @@ import EnergySummaryWidget from './components/EnergySummaryWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddFoodPortal from './components/AddFoodPortal';
 import {FoodProvider} from './FoodContext';
+import WeightTable from './components/WeightTable';
 
 // USDA: https://api.nal.usda.gov/fdc/v1/foods/search?query=apple&pageSize=2&api_key=x9N5HNs0MKEjUjncCmUXfjIhF9T1pzM3wAAJ1YFn
 
@@ -83,7 +84,7 @@ export default function Dashboard(){
                                 </Row>
                                 {/* this row is the footer */}
                                 <Row>
-                                    footEr
+                                    <WeightTable/>
                                 </Row>
                             </Col>
                         </Row>
